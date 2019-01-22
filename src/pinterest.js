@@ -375,7 +375,7 @@ export const init = PDK.init({
      *  Use the SDK to logout of Pinterest
      */
     export function logout() {
-        PDK.logout();
+        window.PDK.logout();
     }
     /*
      *  Use DK to determine auth state of user
