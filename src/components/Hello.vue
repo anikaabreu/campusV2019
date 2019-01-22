@@ -19,9 +19,10 @@
   }
   .hero .lead {
     font-weight: 200;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 </style>
+
 
 <script>
 import { init, login, logout, loggedIn} from '../pinterest.js'
