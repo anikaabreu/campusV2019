@@ -1,0 +1,6 @@
+{
+	"editor.renderIndentGuides": false,
+	"editor.wrappingIndent": "none",
+	"editor.tabSize": 2,
+	"eslint.enable": false
+}
