@@ -24,7 +24,8 @@
         "sequelize": "^4.37.6",
         "sqlite3": "^4.0.0",
         "vue": "^2.5.2",
-        "vue-router": "^3.0.1"
+        "vue-router": "^3.0.1",
+        "chalk": "^2.1.0"
     },
     "devDependencies": {
         "autoprefixer": "^7.1.5",
