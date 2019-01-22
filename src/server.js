@@ -3,7 +3,13 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const Sequelize = require('sequelize')
 const epilogue = require('epilogue')
+const dotenv = require('dotenv').config()
+const app_key = VUE_APP_KEY
+if (dotenv.error) {
+  throw dotenv.error
+}
 
+console.log(dotenv.parsed)
 
 let app = express()
 app.use(cors())
@@ -42,5 +48,6 @@ database
     .then(() => {
         app.listen(8081, () => {
             console.log('listening to port localhost:8081')
+        
         })
     })
