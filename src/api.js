@@ -17,6 +17,7 @@ export default {
       headers: {
         // Authorization: `Bearer ${accessToken}`
       }
+      
     }).then(req => {
       return req.data
     })
