@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const Sequelize = require('sequelize')
 const epilogue = require('epilogue')
 const dotenv = require('dotenv').config()
-const app_key = VUE_APP_KEY
 if (dotenv.error) {
   throw dotenv.error
 }
