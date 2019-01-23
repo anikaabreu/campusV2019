@@ -36,7 +36,7 @@ jQuery(document).ready (
 // }),
 
 )
-
+console.log('LASTESTVERSION')
 
 export default {
   name: 'hello',
