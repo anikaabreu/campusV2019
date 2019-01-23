@@ -3,9 +3,7 @@
     <div>
       <h1 class="display-3">Welcome to a Pinterest Example Application</h1>
       <p class="lead">Please sign in below by clicking the Pinterest logo</p>
-      <button @click="login(function(){
-          console.log(PDK.getSession())
-      })">A</button>
+      <button @click="login()">A</button>
          <button @click="loggedinP()">B</button>
     </div>
   </div>
@@ -64,7 +62,7 @@ export default {
     logoutP(){
     },
     loggedInP() {
-          return !!window.PDK.getSession();
+       console.log(PDK, PDK.getSession())
     }
 
   }
