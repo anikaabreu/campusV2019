@@ -28,15 +28,8 @@
 // import { login, logout, loggedIn} from '../pinterest.js'
 import jQuery from 'jquery'
 
-jQuery(document).ready (
 
-//  window.PDK.init({
-//   appId: 5011742023928009316,
-//   cookie: true
-// }),
-
-)
-console.log('LASTESTVERSION')
+console.log('LASTESTVERSIONFIRE')
 
 export default {
   name: 'hello',
