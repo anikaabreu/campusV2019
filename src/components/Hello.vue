@@ -62,6 +62,7 @@ export default {
     logoutP(){
     },
     loggedInP() {
+      console.log('latestVERSION')
        console.log(PDK, PDK.getSession())
     }
 
