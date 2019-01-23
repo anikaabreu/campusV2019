@@ -47,9 +47,21 @@ export default {
   methods: {
   
   login(){
-    window.PDK.login({
+    PDK.login({
   scope: "read_public, write_public"
-  }, PDK.getSession());
+  }, function(){
+    var state = {
+          pinterest: PDK.loggedIn()
+        };
+
+    if (state.pinterest) {
+           //transition to logged in page
+           console.log(PDK.getSession())
+        } else {
+            this.setState(state);
+        }
+ 
+  });
   },
     initializeP() {
       init()
