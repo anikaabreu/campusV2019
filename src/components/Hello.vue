@@ -30,6 +30,7 @@ export default {
     }
   }
 }
+console.log(process.env.APP_KEY)
 </script>
 
 
