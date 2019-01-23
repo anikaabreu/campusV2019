@@ -350,12 +350,12 @@ window.PDK || (function(window) {
                 //check to see where getting initialized w/wrong client ID, send to netlify, see if popup works because of correct uri redirect
                 var d = [
                     "response_type=token",
-                    "redirect_uri=http://localhost:8080/",
+                    "redirect_uri=https://wonderful-northcutt-be53c1.netlify.com/#/",
                     "client_id=5011742023928009316",
                     "scope=read_public,write_public"
                 ];
 
-                // console.log('returna', a)
+                console.log('returna', a)
                 // for (var e in a) console.log(a, e, 'A');
 
                 // a.hasOwnProperty(e) &&
