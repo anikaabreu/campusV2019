@@ -25,7 +25,7 @@
 
 
 <script>
-import { init, login, logout, loggedIn} from '../pinterest.js'
+import { login, logout, loggedIn} from '../pinterest.js'
 window.PDK.init({
   appId: 5011742023928009316,
   cookie: true })
@@ -38,10 +38,18 @@ export default {
     }
   },
   methods: {
-  login(callback){ 
+  login(callback){
     window.PDK.login({
-          scope: 'read_public, write_public'
-        }, callback);
+  scope: "read_public, write_public"
+  }, function (session) {
+    console.log('sess', session)
+    if ( ! session) {
+        // The user didn't authorize or closed the popup window
+    } else {
+        // Success!
+        console.log(session.auth_token); // Save this to the database along with other info
+    }
+  });
   },
     initializeP() {
       init()
@@ -58,9 +66,9 @@ export default {
     }
 
   }
-  
+
 }
-console.log(process.env.APP_KEY)
+
 </script>
 
 
