@@ -2,7 +2,7 @@
   <p>This Component will show boards</p>
 </template>
 <script>
-import { init, login, logout, loggedIn, createPin, myBoards} from '../pinterest.js'
+// import { init, login, logout, loggedIn, createPin, myBoards} from '../pinterest.js'
 export default {
  data () {
     return {

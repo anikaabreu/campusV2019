@@ -22,8 +22,14 @@
 </template>
 
 <script>
+
   export default {
-    name: 'app'
+    name: 'app',
+    mounted(){
+       let recaptchaScript = document.createElement('script')
+    recaptchaScript.setAttribute('src', 'https://assets.pinterest.com/sdk/sdk.js')
+    document.head.appendChild(recaptchaScript)
+    }
   }
 </script>
 

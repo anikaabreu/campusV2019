@@ -6,14 +6,24 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import jQuery from 'jquery'
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
-
-new Vue({
+jQuery(document).ready(
+  new Vue({
     el: '#app',
     router,
     template: '<App/>',
-    components: { App }
-})
+    components: {
+      App
+    },
+    created: function(){
+      window.PDK.init({
+        appId: 5011742029283009316,
+        cookie: true
+      })
+    }
+  })
+)

@@ -25,6 +25,7 @@
         for (var file of chunk.files) {
           if (file.match(/\.(js|css)$/)) { %>
     <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+
   </head>
   <body>
     <noscript>
@@ -34,5 +35,20 @@
     <!-- Todo: only include in production -->
     <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
     <!-- built files will be auto injected -->
+    <script>
+window.pAsyncInit = function() {
+PDK.init({
+appId: "5011742023928009316", // Change this
+  cookie: true
+  });
+  };
+
+  (function(d, s, id){
+  var js, pjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//assets.pinterest.com/sdk/sdk.js";
+  pjs.parentNode.insertBefore(js, pjs);
+  }(document, 'script', 'pinterest-jssdk'));</script>
   </body>
 </html>

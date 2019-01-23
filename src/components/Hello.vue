@@ -25,31 +25,38 @@
 
 
 <script>
-import { login, logout, loggedIn} from '../pinterest.js'
-window.PDK.init({
-  appId: 5011742023928009316,
-  cookie: true })
+// import { login, logout, loggedIn} from '../pinterest.js'
+import jQuery from 'jquery'
+
+jQuery(document).ready (
+
+//  window.PDK.init({
+//   appId: 5011742023928009316,
+//   cookie: true
+// }),
+
+)
+
+
 export default {
   name: 'hello',
   data () {
     return {
-      window: document.window,
+      window1: {
+        function(){
+         return Window
+        }
+      
+      },
       cookie: true
     }
   },
   methods: {
-  login(callback){
+  
+  login(){
     window.PDK.login({
   scope: "read_public, write_public"
-  }, function (session) {
-    console.log('sess', session)
-    if ( ! session) {
-        // The user didn't authorize or closed the popup window
-    } else {
-        // Success!
-        console.log(session.auth_token); // Save this to the database along with other info
-    }
-  });
+  }, PDK.getSession());
   },
     initializeP() {
       init()
