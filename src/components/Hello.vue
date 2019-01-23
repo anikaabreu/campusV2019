@@ -4,18 +4,8 @@
       <h1 class="display-3">Welcome to a Pinterest Example Application</h1>
       <p class="lead">Please sign in below by clicking the Pinterest logo</p>
       <button @click="login(function(){
-           var state = {
-          pinterest: PDK.loggedIn()
-        };
-
-    if (state.pinterest) {
-           //transition to logged in page
-           console.log(PDK.getSession())
-        } else {
-            this.setState(state);
-        }
- 
-  })">A</button>
+          console.log(PDK.getSession())
+      })">A</button>
          <button @click="loggedinP()">B</button>
     </div>
   </div>
@@ -64,7 +54,7 @@ export default {
   }, callback);
    },
     initializeP() {
-      init()
+     
     },
     loginP(callback) {
       window.PDK.login({
