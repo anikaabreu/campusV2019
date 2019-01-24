@@ -3,7 +3,7 @@
     <div>
       <h1 class="display-3">Welcome to a Pinterest Example Application</h1>
       <p class="lead">Please sign in below by clicking the Pinterest logo</p>
-      <button @click="login(test)">A</button>
+      <button @click="login()">A</button>
          <button @click="loggedInP()">B</button>
     </div>
   </div>
@@ -46,7 +46,11 @@ export default {
   login(callback){
     PDK.login({
   scope: "read_public, write_public"
-  }, callback);
+  }, callback)
+  function test(){
+  console.log(window.PDK.getSession().accessToken)
+}
+test();
    },
     initializeP() {
      
