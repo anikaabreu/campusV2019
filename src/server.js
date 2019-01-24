@@ -29,6 +29,11 @@ let Post = database.define('posts', {
     body: Sequelize.TEXT
 })
 
+let mainUser = database.define('mainUser', {
+  accessToken: Sequelize.STRING,
+  body: Sequelize.TEXT
+})
+
 // Initialize epilogue
 epilogue.initialize({
     app: app,
@@ -39,6 +44,12 @@ epilogue.initialize({
 let userResource = epilogue.resource({
     model: Post,
     endpoints: ['/posts', '/posts/:id']
+})
+
+//?
+let userResource = epilogue.resource({
+  model: mainUser,
+  endpoints: ['/user', '/posts/:id']
 })
 
 // Resets the database and launches the express app on :8081

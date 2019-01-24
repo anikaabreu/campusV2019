@@ -3,7 +3,7 @@
     <div>
       <h1 class="display-3">Welcome to a Pinterest Example Application</h1>
       <p class="lead">Please sign in below by clicking the Pinterest logo</p>
-      <button @click="login()">A</button>
+      <button @click="login(test())">A</button>
          <button @click="loggedInP()">B</button>
     </div>
   </div>
@@ -27,7 +27,9 @@
 <script>
 // import { login, logout, loggedIn} from '../pinterest.js'
 import jQuery from 'jquery'
-
+function test(){
+  console.log(window.PDK.getSession().accessToken)
+}
 
 console.log('LASTESTVERSIONFIRE')
 
@@ -35,12 +37,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      window1: {
-        function(){
-         return Window
-        }
-      
-      },
+      accessCode : window.PDK.getSession().accessToken,
       cookie: true
     }
   },
@@ -56,14 +53,15 @@ export default {
     },
     loginP(callback) {
       window.PDK.login({
-          scope: 'read_public, write_public'
+          scope: 'read_public, write_public, read_relationships'
         }, callback);
     },
     logoutP(){
     },
     loggedInP() {
+      window.PDK.getSession().accessToken
       console.log('latestVERSION')
-       console.log(window.PDK, window.PDK.getSession())
+   
     }
 
   }
