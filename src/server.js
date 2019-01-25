@@ -3,10 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const Sequelize = require('sequelize')
 const epilogue = require('epilogue')
-const dotenv = require('dotenv').config()
-if (dotenv.error) {
-    throw dotenv.error
-}
+
 
 console.log('hello', process.env.USER_ID)
 let app = express()
