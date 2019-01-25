@@ -40,7 +40,7 @@ epilogue.initialize({
 //?
 let userResource = epilogue.resource({
     model: mainUser,
-    endpoints: ['/user', '/posts/:id']
+    endpoints: ['/posts', '/posts/:id']
 })
 
 // Resets the database and launches the express app on :8081
