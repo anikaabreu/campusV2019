@@ -20,10 +20,10 @@ jQuery(document).ready(
             App
         },
         created: function() {
-            window.PDK.init({
-                appId: 5011742029283009316,
-                cookie: true
-            })
+            // window.PDK.init({
+            //     appId: 5011742029283009316,
+            //     cookie: true
+            // })
             console.log('created')
         }
     })

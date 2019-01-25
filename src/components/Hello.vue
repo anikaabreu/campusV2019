@@ -25,35 +25,33 @@
 
 
 <script>
-// import { login, logout, loggedIn} from '../pinterest.js'
-import jQuery from 'jquery'
+import keys from './keys.js'
 function test(){
   console.log(window.PDK.getSession().accessToken)
 }
-
-console.log('LASTESTVERSIONFIRE')
-
+console.log(keys)
 export default {
   name: 'hello',
   data () {
     return {
-      accessCode : window.PDK.getSession().accessToken,
+      // accessCode : window.PDK.getSession().accessToken,
       cookie: true
     }
   },
   methods: {
-  
-  login(callback){
+  login(){
     PDK.login({
   scope: "read_public, write_public"
-  }, callback)
+  }, console.log('blah'))
+
   function test(){
-  console.log(window.PDK.getSession().accessToken)
+    console.log(window.PDK.me())
+  // console.log(window.PDK.getSession().accessToken)
 }
 test();
    },
     initializeP() {
-     
+
     },
     loginP(callback) {
       window.PDK.login({
@@ -65,7 +63,7 @@ test();
     loggedInP() {
       window.PDK.getSession().accessToken
       console.log('latestVERSION')
-   
+
     }
 
   }
