@@ -27,7 +27,7 @@ jQuery(document).ready(
             //     appId: 5011742029283009316,
             //     cookie: true
             // })
-            console.log('created')
+            console.log('UPDATE')
         }
     })
 )
