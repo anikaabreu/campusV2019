@@ -25,12 +25,7 @@
 
 
 <script>
-
-function test(){
-  import axios from 'axios';
-  console.log(window.PDK.getSession().accessToken)
-}
-console.log(process.env.VUE_ID)
+import axios from 'axios';
 
 export default {
   name: 'hello',
