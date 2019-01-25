@@ -51,12 +51,28 @@ let token1 = window.PDK.getSession().accessToken
 //     client_secret=6789abcd&
 //     code=xyz1010
 //     axios.post('https://api.pinterest.com/v1/oauth/token?', {
-// 	username: 'api',
-//         password: 'MY_PASSWORD',
-//         grant_type: 'MY_GRANT_TYPE'
-// },
-    axios.post('https://api.pinterest.com/v1/oauth/token?grant_type=authorization_codeclient_id=5012974284748908469&client_secret=' + check.key + '&code=' + token1)
-      .then(response => {
+// 	grant_type: 'authorization_code',
+//        client_id: '5012974284748908469',
+//         client_secret: check.key,
+//  'https://api.pinterest.com/v1/oauth/tokengrant_type=authorization_codeclient_id=5012974284748908469&client_secret=' + check.key + '&code=' + token1)
+  //       axios.post('/user', {
+  //   firstName: 'Fred',
+  //   lastName: 'Flintstone'
+  // })
+  // .then(function (response) {
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   console.log(error);
+  // });
+    axios.post(
+      'https://api.pinterest.com/v1/oauth/token?', {
+	    grant_type: 'authorization_code',
+      client_id: '5012974284748908469',
+      client_secret: check.key,
+      code: token1
+})
+  .then(response => {
         console.log(response.data)
         // this.accessToken = response.data
       })
@@ -64,7 +80,7 @@ let token1 = window.PDK.getSession().accessToken
         console.log(err)
       })
 
-    console.log(token1)
+
   // console.log(window.PDK.getSession().accessToken)
 }
 test();
