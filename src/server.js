@@ -8,8 +8,7 @@ if (dotenv.error) {
     throw dotenv.error
 }
 
-console.log(dotenv.parsed)
-
+console.log('hello', process.env.USER_ID)
 let app = express()
 app.use(cors())
 app.use(bodyParser.json())

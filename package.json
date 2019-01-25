@@ -5,7 +5,7 @@
     "author": "Anika Abreu <anika.abreu9@gmail.com>",
     "private": true,
     "scripts": {
-        "dev": "node build/dev-server.js",
+        "dev": "node build/dev-server.js && node ./src/server",
         "start": "node build/dev-server.js",
         "build": "node build/build.js && node ./src/server",
         "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
