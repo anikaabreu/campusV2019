@@ -45,8 +45,17 @@ export default {
   }, )
 let token1 = window.PDK.getSession().accessToken
   function test(){
-    axios.post('https://api.pinterest.com/v1/oauth/token?grant_type=authorization_codeclient_id='+'5012974284748908469' +
-    '&client_secret=' + check.key + '&code=' + token1)
+//     https://api.pinterest.com/v1/oauth/token?
+//     grant_type=authorization_code&
+//     client_id=12345&
+//     client_secret=6789abcd&
+//     code=xyz1010
+//     axios.post('https://api.pinterest.com/v1/oauth/token?', {
+// 	username: 'api',
+//         password: 'MY_PASSWORD',
+//         grant_type: 'MY_GRANT_TYPE'
+// },
+    axios.post('https://api.pinterest.com/v1/oauth/token?grant_type=authorization_codeclient_id=5012974284748908469&client_secret=' + check.key + '&code=' + token1)
       .then(response => {
         console.log(response.data)
         // this.accessToken = response.data
