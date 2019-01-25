@@ -25,15 +25,18 @@
 
 
 <script>
-import keys from './keys.js'
+
 function test(){
+  import axios from 'axios';
   console.log(window.PDK.getSession().accessToken)
 }
-console.log(keys)
+console.log(process.env.VUE_ID)
+
 export default {
   name: 'hello',
   data () {
     return {
+      accessToken: {},
       // accessCode : window.PDK.getSession().accessToken,
       cookie: true
     }
@@ -45,6 +48,14 @@ export default {
   }, console.log('blah'))
 
   function test(){
+    axios.post('https://api.pinterest.com/v1/oauth/token?grant_type=authorization_codeclient_id='+'5012974284748908469' +
+    '&client_secret=' + process.env.VUE_SECRET + '&code=' + window.PDK.getSession().accessToken)
+      .then(response => {
+        this.accessToken = response.data
+      })
+      .catch(err => {
+        console.log(err)
+      })
     console.log(window.PDK.me())
   // console.log(window.PDK.getSession().accessToken)
 }

@@ -5,7 +5,7 @@ const Sequelize = require('sequelize')
 const epilogue = require('epilogue')
 const dotenv = require('dotenv').config()
 if (dotenv.error) {
-  throw dotenv.error
+    throw dotenv.error
 }
 
 console.log(dotenv.parsed)
@@ -30,8 +30,8 @@ let Post = database.define('posts', {
 })
 
 let mainUser = database.define('mainUser', {
-  accessToken: Sequelize.STRING,
-  body: Sequelize.TEXT
+    accessToken: Sequelize.STRING,
+    body: Sequelize.TEXT
 })
 
 // Initialize epilogue
@@ -40,16 +40,11 @@ epilogue.initialize({
     sequelize: database
 })
 
-// Create the dynamic REST resource for our Post model
-let userResource = epilogue.resource({
-    model: Post,
-    endpoints: ['/posts', '/posts/:id']
-})
 
 //?
 let userResource = epilogue.resource({
-  model: mainUser,
-  endpoints: ['/user', '/posts/:id']
+    model: mainUser,
+    endpoints: ['/user', '/posts/:id']
 })
 
 // Resets the database and launches the express app on :8081
@@ -58,6 +53,6 @@ database
     .then(() => {
         app.listen(8081, () => {
             console.log('listening to port localhost:8081')
-        
+
         })
     })

@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import jQuery from 'jquery'
 
+
+
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
@@ -20,6 +22,7 @@ jQuery(document).ready(
             App
         },
         created: function() {
+
             // window.PDK.init({
             //     appId: 5011742029283009316,
             //     cookie: true
