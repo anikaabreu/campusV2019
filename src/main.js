@@ -12,18 +12,19 @@ Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 jQuery(document).ready(
-  new Vue({
-    el: '#app',
-    router,
-    template: '<App/>',
-    components: {
-      App
-    },
-    created: function(){
-      window.PDK.init({
-        appId: 5011742029283009316,
-        cookie: true
-      })
-    }
-  })
+    new Vue({
+        el: '#app',
+        router,
+        template: '<App/>',
+        components: {
+            App
+        },
+        created: function() {
+            window.PDK.init({
+                appId: 5011742029283009316,
+                cookie: true
+            })
+            console.log('created')
+        }
+    })
 )

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,31 +25,38 @@
     <% for (var chunk of webpack.chunks) {
         for (var file of chunk.files) {
           if (file.match(/\.(js|css)$/)) { %>
-    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+        <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+        <% }}} %>
 
-  </head>
-  <body>
+</head>
+
+<body>
     <noscript>
       This is your fallback content in case JavaScript fails to load.
     </noscript>
     <div id="app"></div>
     <!-- Todo: only include in production -->
     <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
-    <!-- built files will be auto injected -->
-    <script>
-window.pAsyncInit = function() {
-PDK.init({
-appId: "5011742023928009316", 
-  cookie: true
-  });   
- };
+        <!-- built files will be auto injected -->
+        <script>
+            // window.pAsyncInit = function() {
+            // PDK.init({
+            // appId: "5011742023928009316",
+            //   cookie: true
+            //   });
+            //  };
 
-  (function(d, s, id){
-  var js, pjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//assets.pinterest.com/sdk/sdk.js";
-  pjs.parentNode.insertBefore(js, pjs);
-  }(document, 'script', 'pinterest-jssdk'));</script>
-  </body>
+            (function(d, s, id) {
+                var js, pjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//assets.pinterest.com/sdk/sdk.js";
+                pjs.parentNode.insertBefore(js, pjs);
+            }(document, 'script', 'pinterest-jssdk'));
+        </script>
+</body>
+
 </html>
