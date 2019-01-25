@@ -43,16 +43,17 @@ export default {
   }, )
 let token1 = window.PDK.getSession().accessToken
   function test(){
-    // axios.post('https://api.pinterest.com/v1/oauth/token?grant_type=authorization_codeclient_id='+'5012974284748908469' +
-    // '&client_secret=' + process.env.VUE_SECRET + '&code=' + window.PDK.getSession().accessToken)
-    //   .then(response => {
-    //     this.accessToken = response.data
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
+    axios.post('https://api.pinterest.com/v1/oauth/token?grant_type=authorization_codeclient_id='+'5012974284748908469' +
+    '&client_secret=' + process.env.VUE_SECRET + '&code=' + token1)
+      .then(response => {
+        console.log(response.data)
+        // this.accessToken = response.data
+      })
+      .catch(err => {
+        console.log(err)
+      })
 
-    console.log(window.PDK.me(), token1)
+    console.log(token1)
   // console.log(window.PDK.getSession().accessToken)
 }
 test();
