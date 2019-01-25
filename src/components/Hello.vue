@@ -51,6 +51,7 @@ let token1 = window.PDK.getSession().accessToken
     //   .catch(err => {
     //     console.log(err)
     //   })
+
     console.log(window.PDK.me(), token1)
   // console.log(window.PDK.getSession().accessToken)
 }
