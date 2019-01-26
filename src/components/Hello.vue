@@ -25,63 +25,23 @@
 
 
 <script>
-import axios from 'axios';
-import check from '../check.js'
-console.log(check.key)
 
 export default {
   name: 'hello',
   data () {
     return {
       accessToken: {},
-      // accessCode : window.PDK.getSession().accessToken,
       cookie: true
     }
   },
   methods: {
   login(){
     PDK.login({
-  scope: "read_public, write_public"
+  scope: "read_public, write_public, read_relationships"
   }, )
 let token1 = window.PDK.getSession().accessToken
   function test(){
-//     https://api.pinterest.com/v1/oauth/token?
-//     grant_type=authorization_code&
-//     client_id=12345&
-//     client_secret=6789abcd&
-//     code=xyz1010
-//     axios.post('https://api.pinterest.com/v1/oauth/token?', {
-// 	grant_type: 'authorization_code',
-//        client_id: '5012974284748908469',
-//         client_secret: check.key,
-//  'https://api.pinterest.com/v1/oauth/tokengrant_type=authorization_codeclient_id=5012974284748908469&client_secret=' + check.key + '&code=' + token1)
-  //       axios.post('/user', {
-  //   firstName: 'Fred',
-  //   lastName: 'Flintstone'
-  // })
-  // .then(function (response) {
-  //   console.log(response);
-  // })
-  // .catch(function (error) {
-  //   console.log(error);
-  // });
-    axios.post(
-      'https://api.pinterest.com/v1/oauth/token?', {
-	    grant_type: 'authorization_code',
-      client_id: '5012974284748908469',
-      client_secret: check.key,
-      code: token1
-})
-  .then(response => {
-        console.log(response.data)
-        // this.accessToken = response.data
-      })
-      .catch(err => {
-        console.log(err)
-      })
-
-
-  // console.log(window.PDK.getSession().accessToken)
+    this.accessToken = token1
 }
 test();
    },
@@ -96,6 +56,43 @@ test();
     logoutP(){
     },
     loggedInP() {
+       //     https://api.pinterest.com/v1/oauth/token?
+// //     grant_type=authorization_code&
+// //     client_id=12345&
+// //     client_secret=6789abcd&
+// //     code=xyz1010
+// //     axios.post('https://api.pinterest.com/v1/oauth/token?', {
+// // 	grant_type: 'authorization_code',
+// //        client_id: '5012974284748908469',
+// //         client_secret: check.key,
+// //  'https://api.pinterest.com/v1/oauth/tokengrant_type=authorization_codeclient_id=5012974284748908469&client_secret=' + check.key + '&code=' + token1)
+//   //       axios.post('/user', {
+//   //   firstName: 'Fred',
+//   //   lastName: 'Flintstone'
+//   // })
+//   // .then(function (response) {
+//   //   console.log(response);np
+//   // })
+//   // .catch(function (error) {
+//   //   console.log(error);
+//   // });var request = require('request');
+//     axios.post(
+//       'https://api.pinterest.com/v1/oauth/token?', {
+// 	    grant_type: 'authorization_code',
+//       client_id: '5012974284748908469',
+//       client_secret: check.key,
+//       code: token1
+// })
+//   .then(response => {
+//         console.log(response.data)
+//         // this.accessToken = response.data
+//       })
+//       .catch(err => {
+//         console.log(err)
+//       })
+
+
+//   // console.log(window.PDK.getSession().accessToken)
       window.PDK.getSession().accessToken
       console.log('latestVERSION')
 
