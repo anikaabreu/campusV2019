@@ -19,6 +19,7 @@ export default {
       model: {}
     }
   },
+
   // async created () {
   //   this.refreshPosts()
   // },

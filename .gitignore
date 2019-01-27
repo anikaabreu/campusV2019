@@ -6,12 +6,12 @@ yarn-error.log*
 /test/unit/coverage
 /test/e2e/reports
 selenium-debug.log
-
-
+./serviceAccountKey.json
+src/serviceAcctKey.json
 # Editor directories and files
 .idea
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-
+.env
