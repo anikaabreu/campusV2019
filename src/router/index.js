@@ -7,27 +7,26 @@ import PinterestBoards from '@/components/PinterestBoards'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/posts-manager',
-      name: 'PostsManager',
-      component: PostsManager,
-      meta: {
-        requiresAuth: true
-      }
-    },
-       {
-         path: '/pinterest-boards',
-         name: 'PinterestBoards',
-         component: PinterestBoards,
-         meta: {
-           requiresAuth: true
-         }
-       }
-  ]
+    routes: [{
+            path: '/',
+            name: 'Hello',
+            component: Hello
+        },
+        {
+            path: '/posts-manager',
+            name: 'PostsManager',
+            component: PostsManager,
+            meta: {
+                // requiresAuth: true
+            }
+        },
+        {
+            path: '/pinterest-boards',
+            name: 'PinterestBoards',
+            component: PinterestBoards,
+            meta: {
+                //  requiresAuth: true
+            }
+        }
+    ]
 })

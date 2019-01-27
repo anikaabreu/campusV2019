@@ -6,9 +6,10 @@
   <p>Once you've created a campaign, add users or pins to begin your marketing journey</p>
 </template>
 <script>
-//this will be page w
+
 
 // add api file that manages pins/users here, also import component based on which button clicked, users/pins, use api.js to do api loading, create database modeling in server.js? just like for posts, create user id based on token to remember user when log back in? or use state.cookie like pinterest-demo, something like that, create state check on login, figure out how to run server in fucking production
+import pinterest from '../pinterest.js'
 export default {
  data () {
     return {
@@ -18,8 +19,13 @@ export default {
       model: {}
     }
   },
+  async created () {
+    this.refreshPosts()
+  },
   methods: {
-
+    async refreshApi(){
+      this.pinterestApi = await pinterest.test()
+    }
   }
 
 }

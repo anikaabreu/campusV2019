@@ -7,9 +7,9 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import jQuery from 'jquery'
+import VueFire from 'vuefire'
 
-
-
+Vue.use(VueFire)
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 

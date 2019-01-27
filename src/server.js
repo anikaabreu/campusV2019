@@ -5,12 +5,6 @@ const Sequelize = require('sequelize')
 const epilogue = require('epilogue')
 
 
-console.log('hello', process.env.USER_ID)
-let app = express()
-app.use(cors())
-app.use(bodyParser.json())
-
-
 // SQLite
 
 let database = new Sequelize({
@@ -25,10 +19,10 @@ let Post = database.define('posts', {
     body: Sequelize.TEXT
 })
 
-let mainUser = database.define('mainUser', {
-    accessToken: Sequelize.STRING,
-    body: Sequelize.TEXT
-})
+// let mainUser = database.define('mainUser', {
+//     accessToken: Sequelize.STRING,
+//     body: Sequelize.TEXT
+// })
 
 // Initialize epilogue
 epilogue.initialize({
@@ -37,9 +31,9 @@ epilogue.initialize({
 })
 
 
-//?
+//endpoints is db name, post var is defining model of db
 let userResource = epilogue.resource({
-    model: mainUser,
+    model: Post,
     endpoints: ['/posts', '/posts/:id']
 })
 

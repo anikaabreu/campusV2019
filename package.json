@@ -5,7 +5,7 @@
     "author": "Anika Abreu <anika.abreu9@gmail.com>",
     "private": true,
     "scripts": {
-        "dev": "node build/dev-server.js && node ./src/server",
+        "dev": "node build/dev-server.js",
         "start": "node build/dev-server.js",
         "build": "node build/build.js",
         "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
@@ -20,12 +20,19 @@
         "cors": "^2.8.4",
         "dotenv": "^6.2.0",
         "epilogue": "^0.7.1",
+        "firebase": "^5.8.1",
+        "fs": "0.0.1-security",
+        "https": "^1.0.0",
         "jquery": "^3.3.1",
+        "net": "^1.0.2",
+        "request": "^2.88.0",
         "sequelize": "^4.37.6",
         "sqlite3": "^4.0.6",
+        "tls": "0.0.1",
         "vue": "^2.5.2",
         "vue-router": "^3.0.1",
-        "vue-server-renderer": "^2.5.22"
+        "vue-server-renderer": "^2.5.22",
+        "vuefire": "^1.4.5"
     },
     "devDependencies": {
         "autoprefixer": "^7.1.5",
