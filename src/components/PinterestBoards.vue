@@ -6,7 +6,7 @@ You can select Users to see your top 10 most active users based on repins
  Once you've created a campaign, add users or pins to begin your marketing journey</p>
 </template>
 <script>
-
+import {db} from './firebase';
 
 // add api file that manages pins/users here, also import component based on which button clicked, users/pins, use api.js to do api loading, create database modeling in server.js? just like for posts, create user id based on token to remember user when log back in? or use state.cookie like pinterest-demo, something like that, create state check on login, figure out how to run server in fucking production
 // import pinterest from '../pinterest.js'
@@ -14,20 +14,21 @@ export default {
  data () {
     return {
       loading: false,
-      token: '',
-      boards: [],
-      model: {}
+     cat: {}
     }
   },
-
-  // async created () {
-  //   this.refreshPosts()
-  // },
-  // methods: {
-  //   async refreshApi(){
-  //     this.pinterestApi = await pinterest.test()
-  //   }
-  // }
+  catFire(){
+    let cat = db.ref('cats');
+    var catRef = cat.child("claws");
+    catRef.set({
+      cat: window.PDK.getSession().accessToken
+    })
+    catRef.once("value", function(snapshot) {
+      //change for production so no console.log
+    console.log(snapshot.val());
+});
+  },
+  catFire()
 
 }
 </script>

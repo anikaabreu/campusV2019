@@ -28,7 +28,7 @@ export default {
   name: "hello",
   data() {
     return {
-      accessToken: {},
+      cat: {},
       cookie: true
     };
   },
@@ -38,7 +38,8 @@ export default {
         scope: "read_public, write_public, read_relationships"
       });
     }
-  }
+  },
+
 };
 </script>
 

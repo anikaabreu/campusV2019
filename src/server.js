@@ -21,42 +21,40 @@ admin.initializeApp({
 });
 
 // As an admin, the app has access to read and write all data, regardless of Security Rules
-var db = admin.database();
-var ref = db.ref("pinterest");
-ref.once("value", function(snapshot) {
-    console.log(snapshot.val());
-});
+let db = admin.database();
+let ref = db.ref("pinterest");
+let cat = db.ref('cats');
+let catRef = cat.child("claws");
+catRef.once("value", function(snapshot) {
 
-var pinRef = ref.child("pins");
-// pinRef.set({
-//     name: "test"
-// })
+    var pinRef = ref.child("pins");
 
-//parse json using body parser
-const https = require('https');
+    //send both requests at once, load into db
+    //parse json using body parser
+    const https = require('https');
 
-let token1 = "Aqp51YiD0F5UEu0DanjakCZ5XprTFX05cPTULARFkamNVqBntQakwDAAAHpHRZGp4bxgYG0AAAAA"
+    let token1 = "Aqp51YiD0F5UEu0DanjakCZ5XprTFX05cPTULARFkamNVqBntQakwDAAAHpHRZGp4bxgYG0AAAAA"
 
-let pinUrl = "https://api.pinterest.com/v1/me/pins/?access_token=" + token1 + "&fields=link%2Curl%2Cboard%2Ccounts%2Cmedia%2Coriginal_link%2Ccreator"
+    let pinUrl = "https://api.pinterest.com/v1/me/pins/?access_token=" + token1 + "&fields=link%2Curl%2Cboard%2Ccounts%2Cmedia%2Coriginal_link%2Ccreator"
 
-let userUrl = "https://api.pinterest.com/v1/me/pins/?access_token=" + token1 + "";
+    let userUrl = "https://api.pinterest.com/v1/me/pins/?access_token=" + token1 + "";
 
 
-const req = https.request(pinUrl, (res) => {
-    // console.log('statusCode:', res.statusCode);
-    // console.log('headers:', res.headers);
+    const req = https.request(pinUrl, (res) => {
+        // console.log('statusCode:', res.statusCode);
+        // console.log('headers:', res.headers);
 
-    var data = '';
+        var data = '';
 
-    res.on('data', function(chunk) {
-        data += chunk;
-    });
+        res.on('data', function(chunk) {
+            data += chunk;
+        });
 
-    res.on('end', function() {
-        var obj = JSON.parse(data);
-        let dataArr = obj.data
+        res.on('end', function() {
+            var obj = JSON.parse(data);
+            let dataArr = obj.data
 
-        dataArr.map(function(i, e) {
+            dataArr.map(function(i, e) {
 
                 let image = i.image.original.url
                 let boardUrl = i.board.url
@@ -75,26 +73,24 @@ const req = https.request(pinUrl, (res) => {
                 });
 
             })
-            // for (var i = 0; i < length.length; i++) {
-            //     console.log(obj.data.length[i])
-            // }
 
-        // console.log(obj.data[0].boards, obj.data[0].counts, obj.data[0].original_link, obj.data[0].url);
-    })
+        })
 
-    // res.on('data', (d) => {
-    //     console.log(d)
-    //     pinRef.set({
-    //         d
-    //     });
+        // res.on('data', (d) => {
+        //     console.log(d)
+        //     pinRef.set({
+        //         d
+        //     });
 
-    // });
+        // });
+    });
+
+    req.on('error', (e) => {
+        console.error(e);
+    });
+    req.end();
+
 });
-
-req.on('error', (e) => {
-    console.error(e);
-});
-req.end();
 
 // const options = {
 //     protocol: 'https',
