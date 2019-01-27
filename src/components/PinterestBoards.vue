@@ -1,9 +1,13 @@
 <template>
-  <p>Welcome to your Dashboard
+<h1>Welcome to your Dashboard</h1>
+<p>Select Users see your top 10 most active users based on repins</p>
+<p> The pins button will show your top 10 most active pins based on repins.
+</p>
+  <!-- <p>
  Use the create a campaign button to create a campaign which you will use to organize your marketing needs
 You can select Users to see your top 10 most active users based on repins
  The pins button will show your top 10 most active pins based on repins.
- Once you've created a campaign, add users or pins to begin your marketing journey</p>
+ Once you've created a campaign, add users or pins to begin your marketing journey</p> -->
 </template>
 <script>
 import { db } from './../firebase.js';
