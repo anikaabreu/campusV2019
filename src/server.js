@@ -33,6 +33,7 @@ catRef.once("value", function(snapshot) {
     //parse json using body parser
     const https = require('https');
 
+    let token1; //grab value from db
 
     let pinUrl = "https://api.pinterest.com/v1/me/pins/?access_token=" + token1 + "&fields=link%2Curl%2Cboard%2Ccounts%2Cmedia%2Coriginal_link%2Ccreator"
 
