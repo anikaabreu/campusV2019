@@ -33,14 +33,13 @@ catRef.once("value", function(snapshot) {
     //parse json using body parser
     const https = require('https');
 
-    let token1 = "Aqp51YiD0F5UEu0DanjakCZ5XprTFX05cPTULARFkamNVqBntQakwDAAAHpHRZGp4bxgYG0AAAAA"
 
     let pinUrl = "https://api.pinterest.com/v1/me/pins/?access_token=" + token1 + "&fields=link%2Curl%2Cboard%2Ccounts%2Cmedia%2Coriginal_link%2Ccreator"
 
     let userUrl = "https://api.pinterest.com/v1/me/pins/?access_token=" + token1 + "";
 
 
-    const req = https.request(pinUrl, (res) => {
+    const reqPin = https.request(pinUrl, (res) => {
         // console.log('statusCode:', res.statusCode);
         // console.log('headers:', res.headers);
 
@@ -76,19 +75,56 @@ catRef.once("value", function(snapshot) {
 
         })
 
-        // res.on('data', (d) => {
-        //     console.log(d)
-        //     pinRef.set({
-        //         d
-        //     });
 
-        // });
+    });
+    const reqUser = https.request(userUrl, (res) => {
+        // console.log('statusCode:', res.statusCode);
+        // console.log('headers:', res.headers);
+
+        var data = '';
+
+        res.on('data', function(chunk) {
+            data += chunk;
+        });
+
+        res.on('end', function() {
+            var obj = JSON.parse(data);
+            let dataArr = obj.data
+
+            dataArr.map(function(i, e) {
+
+                let image = i.image.original.url
+                let boardUrl = i.board.url
+                let boardName = i.board.name
+                let repins = i.counts.saves
+                let originalLink = i.original_link
+                let url = i.url
+
+                pinRef.set({
+                    image: image,
+                    boardUrl: boardUrl,
+                    boardName: boardName,
+                    repins: repins,
+                    originalLink: originalLink,
+                    url: url,
+                });
+
+            })
+
+        })
+
+
     });
 
-    req.on('error', (e) => {
+    reqPin.on('error', (e) => {
         console.error(e);
     });
-    req.end();
+    reqPin.end();
+
+    reqUser.on('error', (e) => {
+        console.error(e);
+    });
+    reqUser.end();
 
 });
 
