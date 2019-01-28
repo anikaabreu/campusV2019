@@ -39,6 +39,7 @@ export default {
       PDK.login({
         scope: "read_public, write_public, read_relationships"
       });
+      console.log('seriouslyPINTERESTCOMEON')
       this.$router.push('pinterest-boards')
     }
   },
