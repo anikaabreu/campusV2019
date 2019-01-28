@@ -63,15 +63,21 @@
 import { db } from "./../firebase.js";
 import { VCard, VCardText, VCardMedia } from "vuetify/lib";
 import Vue2Filters from 'vue2-filters'
+import PinsRepins from './PinsRepins.vue';
 
 export default {
   components: {
     VCard,
     VCardText,
-    VCardMedia
+    VCardMedia,
+    appUserDetail: PinsRepins
   },
   data() {
     return {
+      repins: '',
+      board:'',
+      userName: '',
+      userUrl:'',
       loading: false,
       pins: {}
     };

@@ -6,6 +6,8 @@ import PinterestBoards from '@/components/PinterestBoards'
 import Pins from '@/components/Pins'
 import Users from '@/components/Users'
 import Campaign from '@/components/Campaign'
+import UsersRepin from '@/components/UserRepin'
+import PinsRepins from '@/components/PinsRepins'
 
 
 Vue.use(Router)
@@ -41,8 +43,12 @@ export default new Router({
                     path: 'users',
                     component: Users
                 }, {
-                    path: 'campaign',
-                    component: Campaign
+                    path: 'userRepins',
+                    component: UsersRepin
+                },
+                {
+                  path: 'PinsRepins',
+                  component: PinsRepins
                 }
 
             ],
