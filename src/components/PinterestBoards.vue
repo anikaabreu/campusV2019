@@ -3,18 +3,17 @@
 <br>
 <br>
   <h1 class="display-2">Welcome to your Dashboard</h1>
-<br>
-<br>
+
 <p class="headline font-weight-light">
 Start with viewing pins and users with repins and links to their origin. Choose Tables for another way to view your data. 
-<br><br>
+
 
   </p>
   <v-text class="text-xs-center">
     <div class="font-weight-bold "></div>
    
    <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
+   
       
 <v-btn
 to="/pinterest-boards/Pins" depressed dark color="cyan"

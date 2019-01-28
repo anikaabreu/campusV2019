@@ -3,9 +3,9 @@
     <v-app id="inspire">
           <v-toolbar color="indigo" dark>
             <v-toolbar-title class="text-xs-center"></v-toolbar-title>
-            <v-spacer></v-spacer>
+          
           </v-toolbar>
-             <v-spacer></v-spacer>
+            
       <h1 class="headline font-weight-light">Sort your users by choosing Repins to show most active users.</h1>
          <v-spacer></v-spacer>
             <v-spacer></v-spacer>
