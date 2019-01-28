@@ -5,6 +5,7 @@ import PostsManager from '@/components/PostsManager'
 import PinterestBoards from '@/components/PinterestBoards'
 import Pins from '@/components/Pins'
 import Users from '@/components/Users'
+import Campaign from '@/components/Campaign'
 
 
 Vue.use(Router)
@@ -39,7 +40,11 @@ export default new Router({
                     // when /pinrerest-boards/users is matched
                     path: 'users',
                     component: Users
+                }, {
+                    path: 'campaign',
+                    component: Campaign
                 }
+
             ],
             meta: {
                 //  requiresAuth: true

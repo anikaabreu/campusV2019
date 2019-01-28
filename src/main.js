@@ -9,10 +9,20 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import jQuery from 'jquery'
 import VueFire from 'vuefire'
 import Vuetify from 'vuetify'
+import 'vuetify/src/stylus/app.styl'
+import Vue2Filters from 'vue2-filters'
+
+import 'vuetify/dist/vuetify.min.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
 
 Vue.use(VueFire)
 Vue.use(BootstrapVue)
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+    iconfont: 'mdi'
+})
+Vue.use(Vue2Filters)
+
 Vue.config.productionTip = false
 
 jQuery(document).ready(
@@ -22,6 +32,7 @@ jQuery(document).ready(
         template: '<App/>',
         components: {
             App
-        }
+        },
+        mixins: [Vue2Filters.mixin]
     })
 )
