@@ -8,9 +8,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import jQuery from 'jquery'
 import VueFire from 'vuefire'
+import Vuetify from 'vuetify'
 
 Vue.use(VueFire)
 Vue.use(BootstrapVue)
+Vue.use(Vuetify)
 Vue.config.productionTip = false
 
 jQuery(document).ready(
@@ -20,14 +22,6 @@ jQuery(document).ready(
         template: '<App/>',
         components: {
             App
-        },
-        created: function() {
-
-            // window.PDK.init({
-            //     appId: 5011742029283009316,
-            //     cookie: true
-            // })
-            console.log('UPDATE')
         }
     })
 )

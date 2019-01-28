@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <div>
-      <h1 class="display-3">Welcome to a Pinterest Example Application</h1>
+      <h1 class="display-4">Welcome to a Pinterest Example Application</h1>
       <p class="lead">Please sign in below by clicking the Sign In button below.</p>
       <button @click="login()">Sign In</button>
 
@@ -39,7 +39,6 @@ export default {
       PDK.login({
         scope: "read_public, write_public, read_relationships"
       });
-      console.log('seriouslyPINTERESTCOMEON')
       this.$router.push('pinterest-boards')
     }
   },
