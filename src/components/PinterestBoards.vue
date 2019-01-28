@@ -1,5 +1,5 @@
 <template>
-<div class="hero">
+<div >
 <br>
 <br>
   <h1 class="display-2">Welcome to your Dashboard</h1>
