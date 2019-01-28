@@ -38,8 +38,7 @@ export default {
     })
 this.$firebaseRefs.cat.on("child_added", function(snapshot) {
       //change for production so no console.log
-    console.log(snapshot.val());
-    console.log('old', "AobgfDBynql0vF61hZn4NhVtNjsJFX3WXXIDbCBFk0CuTMBy-QakwDAAAHpHRZO-CxpgXoUAAAAA")
+    // console.log(snapshot.val());
 });
 
 }
