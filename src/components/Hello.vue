@@ -1,22 +1,20 @@
 <template>
-  <div class="hero">
-    <div>
-      <v-slide-y-transition>
-      <h1 class="display-3">Welcome to a Pinterest API Example Application</h1>
-      </v-slide-y-transition>
-      <v-slide-y-transition>
-      <p class="lead">
-<span>This application will allow you to see your pins and users with repin information.</span>
-        </p>
-        </v-slide-y-transition>
-      <v-btn v-on:click.native="login()" depressed dark color="cyan">Sign In</v-btn>
 
-    </div>
-  </div>
+<div class="p5">
+      <h1 class="lrgHeaderHello ">Welcome to a Pinterest API Example Application</h1>
+      <p class="lead">
+This application will allow you to see your pins and users with repin information.
+        </p>
+      <v-btn v-on:click.native="login()" :loginT="true" depressed dark color="cyan">Sign In</v-btn>
+
+</div>
+
+
+
 
 </template>
 
-<style>
+<style scoped>
 .hero {
   height: 90vh;
   display: flex;
@@ -24,14 +22,21 @@
   justify-content: center;
   text-align: center;
 }
-.hero .lead {
+ .lead {
   font-weight: 200;
   font-size: 1.6rem;
+  color: black;
+}
+
+.p5 {
+  padding: 5%;
+  text-align: center;
 }
 </style>
 
 
 <script>
+
 export default {
   name: "hello",
   data() {
@@ -45,9 +50,13 @@ export default {
       PDK.login({
         scope: "read_public, write_public, read_relationships"
       });
+      this.$store.state.login = true;
       this.$router.push('pinterest-boards')
     }
   },
+  created: function(){
+      // console.log(this.$store.state.login)
+    }
 
 };
 </script>

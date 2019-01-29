@@ -12,7 +12,7 @@
               <v-layout row wrap>
                 <v-flex v-for="(user, value) in users" v-bind="{ [`xs${2}`]: true }" :key="value">
                   <v-card raised>
-                    <v-img :src="user.image['60x60'].url" height="200px">
+                    <v-img :src="user.image['60x60'].url" height="auto">
                       <v-container fill-height fluid pa-4>
                         <v-layout fill-height>
                           <v-flex xs12 align-end flexbox></v-flex>

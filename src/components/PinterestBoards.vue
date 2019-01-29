@@ -1,92 +1,95 @@
 <template>
-<div >
-<br>
-<br>
-  <h1 class="display-2">Welcome to your Dashboard</h1>
+  <div >
+    <v-card
+      class="mx-auto"
+      color="#26c6da"
+      dark
+      max-width="800"
+      v-show="['PinterestBoards'].includes($route.name)">
+      <v-card-title>
+        <span class="title font-weight-light"> Welcome to your Dashboard</span>
+      </v-card-title>
 
-<p class="headline font-weight-light">
-Start with viewing pins and users with repins and links to their origin. Choose Tables for another way to view your data. 
+      <v-card-text class="headline font-weight-bold">
+       Choose Users or Pins to get started and look at your data unsorted. Tables will provide a sorted view.
+      </v-card-text>
 
+      <v-card-actions>
+        <v-list-tile class="grow">
+          <v-list-tile-avatar color="grey darken-3">
 
-  </p>
-  <v-text class="text-xs-center">
-    <div class="font-weight-bold "></div>
-   
-   <v-spacer></v-spacer>
-   
-      
-<v-btn
-to="/pinterest-boards/Pins" depressed dark color="cyan"
->Pins</v-btn>
-<v-btn
-to="/pinterest-boards/Users" depressed dark color="cyan"
->Users</v-btn>
-  <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-       <v-btn dark color="indigo" @click="show = !show">Updates
+          </v-list-tile-avatar>
 
-            </v-btn>
-    <v-slide-y-transition>
-            <v-card-text v-show="show">
-              <p>Upcoming Features</p>
-              Our next feature will be a campaign manager tool, to organize users and pins in one location.
-            </v-card-text>
-          </v-slide-y-transition>
-              <v-btn dark color="indigo" @click="table = !table">Tables
+          <v-layout
+            align-center
+            justify-end
+          >
+            <v-icon class="mr-1">mdi-heart</v-icon>
+            <span class="subheading mr-2">256</span>
+            <span class="mr-1">·</span>
+            <v-icon class="mr-1">mdi-share-variant</v-icon>
+            <span class="subheading">45</span>
+          </v-layout>
+        </v-list-tile>
+      </v-card-actions>
+    </v-card>
+    <router-view></router-view>
 
-            </v-btn>
-    <v-slide-y-transition>
-            <v-card-text v-show="table">
-Here, you can choose to see your data displayed as a table with sorting capabilities.          
-<v-btn
-to="/pinterest-boards/PinsRepins" depressed dark color="cyan"
->Pins</v-btn>
-<v-btn
-to="/pinterest-boards/UserRepins" depressed dark color="cyan"
->Users</v-btn>  </v-card-text>
-          </v-slide-y-transition>
-
-  </v-text>
-<br><br>
-<router-view></router-view>
-</div>
+  </div>
 </template>
+<style>
+.hero {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero .lead {
+  font-weight: 200;
+  font-size: 1.6rem;
+}
+
+.subTxtPint{
+font-size: 24px!important;
+    line-height: 32px!important;
+    font-weight:200!important;
+}
+</style>
+
 <script>
-import { db } from './../firebase.js';
+import { db } from "./../firebase.js";
 import { VCard, VCardText, VCardMedia } from "vuetify/lib";
 
 export default {
-   components: {
+  components: {
     VCard,
     VCardText,
-    VCardMedia,
+    VCardMedia
   },
- data () {
+  data() {
     return {
       loading: false,
       show: false,
       table: false
-    }
+    };
   },
   firebase: {
-    cat: db.ref('cats'),
-
+    cat: db.ref("cats")
   },
   methods: {
-    user(){
-      this.$router.push('pinterest-boards/Users')
+    user() {
+      this.$router.push("pinterest-boards/Users");
     },
-    pin(){
-      this.$router.push('pinterest-boards/Pins')
+    pin() {
+      this.$router.push("pinterest-boards/Pins");
     }
   },
-  created: function(){
+  created: function() {
     this.$firebaseRefs.cat.set({
-        cat: window.PDK.getSession().accessToken
-    })
-this.$firebaseRefs.cat.on("child_added", function(snapshot) {
-
-});
-}
-}
+      cat: window.PDK.getSession().accessToken
+    });
+    this.$firebaseRefs.cat.on("child_added", function(snapshot) {});
+  }
+};
 </script>

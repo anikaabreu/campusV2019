@@ -1,15 +1,61 @@
 <template>
 
   <div id="app">
- <b-navbar toggleable="md" type="dark" variant="dark">
-      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand href="http://anikaabreu.com">Portfolio</b-navbar-brand>
-      <b-collapse is-nav id="nav_collapse">
-        <b-navbar-nav>
+     <v-toolbar
+     color="teal lighten-3"
+     extended
+     card
+     justify-end>
+      <v-toolbar-side-icon> <v-icon slot="extension" class="white--text">menu</v-icon></v-toolbar-side-icon>
+      <v-toolbar-items v-show="this.$store.state.login" class="hidden-sm-and-down white--text" slot="extension" >
+        <v-btn flat large to="/pinterest-boards/Users" class="white--text text-xs-right">Users</v-btn>
+        <v-btn to="/pinterest-boards/Pins" flat large  class="white--text text-xs-right">Pins</v-btn>
+        <v-btn @click="drawer = !drawer" flat large  class="white--text text-xs-right">Tables</v-btn>
+         <v-btn href="https://anikaabreu.com" flat large class="white--text text-xs-right">Portfolio</v-btn>
 
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
+      </v-toolbar-items>
+
+    </v-toolbar>
+
+   <v-navigation-drawer
+        v-model="drawer"
+        absolute
+        temporary
+      >
+         <v-card>
+          <v-toolbar color="teal" dark>
+            <v-toolbar-side-icon></v-toolbar-side-icon>
+
+            <v-toolbar-title class="text-xs-center">Sorted Tables</v-toolbar-title>
+
+            <v-spacer></v-spacer>
+
+            <v-btn icon>
+              <v-icon></v-icon>
+            </v-btn>
+          </v-toolbar>
+
+          <v-list subheader>
+            <v-subheader>View Repins</v-subheader>
+            <v-list-tile
+            >
+<v-btn flat normalto="/pinterest-boards/UserRepins" >Users</v-btn>
+            </v-list-tile>
+          </v-list>
+
+          <v-divider></v-divider>
+
+          <v-list subheader>
+            <v-subheader></v-subheader>
+<v-list-tile
+            >
+<v-btn flat normalto="/pinterest-boards/UserRepins" >Pins</v-btn>
+            </v-list-tile>
+          </v-list>
+        </v-card>
+
+      </v-navigation-drawer>
+
     <main>
 
       <router-view></router-view>
@@ -26,7 +72,15 @@
        let recaptchaScript = document.createElement('script')
     recaptchaScript.setAttribute('src', 'https://assets.pinterest.com/sdk/sdk.js')
     document.head.appendChild(recaptchaScript)
+
+    },
+    data () {
+    return {
+      drawer: false,
+      show: false
     }
+  }
+
   }
 </script>
 
@@ -36,10 +90,10 @@
   }
 
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Rajdhani', sans-serif!important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+    color: white;
   }
 
   main {

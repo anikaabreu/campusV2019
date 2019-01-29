@@ -1,14 +1,10 @@
 <template v-for="(pin, value) in pins" :key="value">
 
     <v-app id="inspire">
-          <v-toolbar color="indigo" dark>
-            <v-toolbar-title class="text-xs-center"></v-toolbar-title>
-            <v-spacer></v-spacer>
-          </v-toolbar>
-             <v-spacer></v-spacer>
-      <h1 class="headline font-weight-light">Sort your pins by choosing Repins to show most popular pins.</h1>
-         <v-spacer></v-spacer>
-            <v-spacer></v-spacer>
+       <br>
+          <v-toolbar color="indigo" dark> <v-toolbar-title class="white--text text--darken-4">Pins</v-toolbar-title></v-toolbar>
+
+   <v-subheader>Sort your pins by choosing Repins to show most popular pins.</v-subheader>
       <div v-bind:result="pins"></div>
     <v-data-table
       :headers="top"
@@ -20,7 +16,7 @@
         <td class="text-xs-left">{{props.item.board.url }}</td>
         <td class="text-xs-left">{{ props.item.url }}</td>
         <td class="text-xs-left">{{ props.item.original_link }}</td>
-   
+
       </template>
     </v-data-table>
   </v-app>
@@ -55,7 +51,7 @@ export default {
         { text: 'Board', value: 'board.url' },
         { text: 'Original Link', value: 'original_link' },
         { text: 'Url', value: 'item.url' },
-       
+
       ]
     };
   },

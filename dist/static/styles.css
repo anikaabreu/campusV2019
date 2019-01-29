@@ -1,0 +1,8 @@
+body {
+    background-image: url('/static/img/BG.svg');
+    background-size: cover;
+    background-repeat: no-repeat no-repeat;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Rajdhani', sans-serif!important;
+}

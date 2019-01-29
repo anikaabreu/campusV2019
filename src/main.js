@@ -10,8 +10,7 @@ import jQuery from 'jquery'
 import VueFire from 'vuefire'
 import Vuetify from 'vuetify'
 import 'vuetify/src/stylus/app.styl'
-import Vue2Filters from 'vue2-filters'
-
+import Vuex from 'vuex'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
@@ -21,18 +20,25 @@ Vue.use(BootstrapVue)
 Vue.use(Vuetify, {
     iconfont: 'mdi'
 })
-Vue.use(Vue2Filters)
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 
+const store = new Vuex.Store({
+    state: {
+        login: false
+    }
+})
 jQuery(document).ready(
     new Vue({
         el: '#app',
+        store: store,
         router,
         template: '<App/>',
         components: {
             App
+
         },
-        mixins: [Vue2Filters.mixin]
     })
+
 )
