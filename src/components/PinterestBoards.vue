@@ -71,7 +71,7 @@ export default {
     this.$firebaseRefs.cat.set({
       cat: window.PDK.getSession().accessToken
     });
-    this.$firebaseRefs.cat.on("child_added", function(snapshot) {});
+   this.$store.state.login = true;
   }
 };
 </script>

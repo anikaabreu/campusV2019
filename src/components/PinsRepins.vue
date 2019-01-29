@@ -55,5 +55,8 @@ export default {
       ]
     };
   },
+  created: function(){
+    this.$store.state.login = true;
+  }
 };
 </script>

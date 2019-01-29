@@ -92,8 +92,7 @@ export default {
     }
   },
   created: function() {
-    console.log(this.$firebaseRefs.pins);
-    // this.$firebaseRefs.pins
+  this.$store.state.login = true;
   }
 };
 </script>

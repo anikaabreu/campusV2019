@@ -49,7 +49,7 @@
             <v-subheader></v-subheader>
 <v-list-tile
             >
-<v-btn flat normal to="/pinterest-boards/UserRepins" >Pins</v-btn>
+<v-btn flat normal to="/pinterest-boards/PinsRepins" >Pins</v-btn>
             </v-list-tile>
           </v-list>
         </v-card>
