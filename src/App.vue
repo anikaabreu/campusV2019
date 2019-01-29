@@ -39,7 +39,7 @@
             <v-subheader>View Repins</v-subheader>
             <v-list-tile
             >
-<v-btn flat normalto="/pinterest-boards/UserRepins" >Users</v-btn>
+<v-btn flat normal to="/pinterest-boards/UserRepins" >Users</v-btn>
             </v-list-tile>
           </v-list>
 
@@ -49,7 +49,7 @@
             <v-subheader></v-subheader>
 <v-list-tile
             >
-<v-btn flat normalto="/pinterest-boards/UserRepins" >Pins</v-btn>
+<v-btn flat normal to="/pinterest-boards/UserRepins" >Pins</v-btn>
             </v-list-tile>
           </v-list>
         </v-card>
