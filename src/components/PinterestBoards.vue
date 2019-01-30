@@ -56,10 +56,11 @@ export default {
     }
   },
   created: function() {
+this.$store.state.login = true;
     this.$firebaseRefs.cat.set({
       cat: window.PDK.getSession().accessToken
     });
-   this.$store.state.login = true;
+   
   }
 };
 </script>
