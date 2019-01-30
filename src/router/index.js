@@ -23,7 +23,7 @@ export default new Router({
             name: 'PostsManager',
             component: PostsManager,
             meta: {
-                // requiresAuth: true
+
             }
         },
         {

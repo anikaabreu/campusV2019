@@ -20,18 +20,6 @@
   </div>
 </template>
 <style>
-.hero {
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.hero .lead {
-  font-weight: 200;
-  font-size: 1.6rem;
-}
-
 .subTxtPint{
 font-size: 24px!important;
     line-height: 32px!important;

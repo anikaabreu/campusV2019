@@ -63,6 +63,7 @@ export default {
  data () {
     return {
       loading: false,
+      //for future campaign functionality
       newUser: {
         name: '',
         repins: '',
@@ -77,6 +78,7 @@ export default {
     users: db.ref('users/userArr')
   },
   addUser() {
+    //for future campaign functionality
         this.$firebaseRefs.items.push({
             name: this.newUser.name,
             repins: this.newUser.repins,

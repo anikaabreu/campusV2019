@@ -85,12 +85,6 @@ export default {
   firebase: {
     pins: db.ref("pins/dataArr")
   },
-//  mixins: [Vue2Filters.mixin],
-  methods: {
-    sortPins() {
-      console.log(this.pins);
-    }
-  },
   created: function() {
   this.$store.state.login = true;
   }
